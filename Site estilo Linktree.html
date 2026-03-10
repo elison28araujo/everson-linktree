@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Everson Araujo | Links</title>
+  <meta name="description" content="Links oficiais de Everson Araujo" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-overlay: rgba(0, 0, 0, 0.45);
+      --card-bg: rgba(255, 255, 255, 0.10);
+      --card-border: rgba(255, 255, 255, 0.18);
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.85);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --blur: blur(18px);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      color: var(--text);
+      overflow: hidden;
+      position: relative;
+      background: #000;
+    }
+
+    .bg-slider {
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      overflow: hidden;
+    }
+
+    .bg-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transform: scale(1.08);
+      transition: opacity 1.4s ease, transform 7s ease;
+    }
+
+    .bg-slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.65)),
+        linear-gradient(to top right, rgba(0,0,0,0.12), rgba(0,0,0,0.25));
+      z-index: -2;
+    }
+
+    .bg-vignette {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 20%, rgba(0,0,0,0.45) 100%);
+      z-index: -1;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 430px;
+      padding: 32px 24px 26px;
+      border-radius: 30px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      box-shadow: var(--shadow);
+      text-align: center;
+      animation: fadeUp 1s ease;
+    }
+
+    .profile-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .profile-img {
+      width: 122px;
+      height: 122px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.85);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+    }
+
+    .name {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      margin-bottom: 6px;
+    }
+
+    .user {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .bio {
+      font-size: 0.97rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 26px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .link-btn {
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 16px 18px;
+      border-radius: 16px;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      transition: 0.28s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.14);
+      backdrop-filter: blur(8px);
+    }
+
+    .link-btn:hover {
+      transform: translateY(-3px) scale(1.01);
+      background: rgba(255,255,255,0.2);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.22);
+    }
+
+    .footer {
+      margin-top: 22px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.72);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 28px 18px 22px;
+        border-radius: 24px;
+      }
+
+      .name {
+        font-size: 1.7rem;
+      }
+
+      .bio {
+        font-size: 0.93rem;
+      }
+
+      .link-btn {
+        padding: 15px 16px;
+        font-size: 0.96rem;
+      }
+
+      .profile-img {
+        width: 108px;
+        height: 108px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-slider" id="bgSlider"></div>
+  <div class="bg-overlay"></div>
+  <div class="bg-vignette"></div>
+
+  <main class="page">
+    <section class="card">
+      <div class="profile-wrap">
+        <img src="Perfil.jpg" alt="Foto de perfil de Everson Araujo" class="profile-img">
+      </div>
+
+      <h1 class="name">Everson Araujo</h1>
+      <p class="user">@eversonaraujo__</p>
+
+      <p class="bio">
+        Fotógrafo, mentor e especialista em imagem, marca pessoal e campanhas publicitárias.
+      </p>
+
+      <div class="links">
+        <a class="link-btn" href="#" target="_blank">WhatsApp</a>
+        <a class="link-btn" href="https://www.instagram.com/eversonaraujo__/" target="_blank">Instagram</a>
+        <a class="link-btn" href="#" target="_blank">Mentoria</a>
+        <a class="link-btn" href="https://www.instagram.com/studioloft.br/" target="_blank">Studio Loft</a>
+      </div>
+
+      <div class="footer">
+        © Everson Araujo
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const images = [
+      "Slide1.jpg",
+      "Slide2.jpg",
+      "Slide3.jpg",
+      "Slide4.jpg",
+      "Slide5.jpg",
+      "Slide6.jpg",
+      "Slide7.jpg",
+      "Slide8.jpg"
+    ];
+
+    const slider = document.getElementById("bgSlider");
+    let slides = [];
+    let current = Math.floor(Math.random() * images.length);
+
+    images.forEach((img, index) => {
+      const div = document.createElement("div");
+      div.classList.add("bg-slide");
+      div.style.backgroundImage = `url('${img}')`;
+      if (index === current) div.classList.add("active");
+      slider.appendChild(div);
+      slides.push(div);
+    });
+
+    function nextSlide() {
+      slides[current].classList.remove("active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active");
+    }
+
+    setInterval(nextSlide, 5000);
+  </script>
+</body>
+</html>
