@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campanhas | Everson Araujo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(17, 17, 17, 0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .topbar-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: .25s ease;
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .btn-outline {
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-primary {
+      color: #111;
+      background: #fff;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 56px 20px 28px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      text-transform: uppercase;
+      line-height: .95;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,.78);
+    }
+
+    .video-wrap {
+      max-width: 980px;
+      margin: 18px auto 32px;
+      padding: 0 20px;
+    }
+
+    .video-box {
+      border-radius: 26px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+
+    video {
+      width: 100%;
+      display: block;
+      background: #000;
+    }
+
+    .gallery {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 10px 20px 80px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0,0,0,.25);
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cta {
+      max-width: 980px;
+      margin: 0 auto 90px;
+      padding: 0 20px;
+    }
+
+    .cta-box {
+      background: #fff;
+      color: #111;
+      border-radius: 28px;
+      padding: 34px 26px;
+      text-align: center;
+      box-shadow: 0 24px 60px rgba(0,0,0,.18);
+    }
+
+    .cta-box h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .cta-box p {
+      max-width: 700px;
+      margin: 0 auto 22px;
+      line-height: 1.7;
+      color: rgba(17,17,17,.78);
+    }
+
+    .cta-box .btn-primary {
+      display: inline-block;
+      background: #111;
+      color: #fff;
+      padding: 14px 24px;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .top-actions {
+        width: 100%;
+      }
+
+      .top-actions a {
+        flex: 1;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Everson Araujo</div>
+      <div class="top-actions">
+        <a class="btn btn-outline" href="index.html">Voltar</a>
+        <a class="btn btn-primary" href="https://wa.me/559184218754" target="_blank">Agendar / Orçamento</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Campanhas</h1>
+    <p>
+      Produções publicitárias, editoriais e campanhas visuais com direção criativa para marcas, coleções, posicionamento e lançamentos.
+    </p>
+  </section>
+
+  <section class="video-wrap">
+    <div class="video-box">
+      <video id="campanhaVideo" muted playsinline loop controls autoplay preload="metadata">
+        <source src="campanha4.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo em HTML5.
+      </video>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="card"><img src="campanha1.jpg" alt="Campanha 1"></div>
+    <div class="card"><img src="campanha2.jpg" alt="Campanha 2"></div>
+    <div class="card"><img src="campanha7.jpg" alt="Campanha 7"></div>
+    <div class="card"><img src="campanha8.jpg" alt="Campanha 8"></div>
+    <div class="card"><img src="campanha9.jpg" alt="Campanha 9"></div>
+    <div class="card"><img src="campanha10.jpg" alt="Campanha 10"></div>
+    <div class="card"><img src="campanha11.jpg" alt="Campanha 11"></div>
+    <div class="card"><img src="campanha12.jpg" alt="Campanha 12"></div>
+    <div class="card"><img src="campanha13.jpg" alt="Campanha 13"></div>
+    <div class="card"><img src="campanha14.jpg" alt="Campanha 14"></div>
+    <div class="card"><img src="campanha15.jpg" alt="Campanha 15"></div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-box">
+      <h2>Vamos produzir sua campanha</h2>
+      <p>
+        Clique abaixo para falar no WhatsApp e solicitar agendamento ou orçamento.
+      </p>
+      <a class="btn btn-primary" href="https://wa.me/559184218754" target="_blank">Falar no WhatsApp</a>
+    </div>
+  </section>
+
+  <script>
+    const video = document.getElementById('campanhaVideo');
+
+    const tryPlayVideo = () => {
+      video.play().catch(() => {});
+    };
+
+    window.addEventListener('load', tryPlayVideo);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.45 });
+
+    observer.observe(video);
+  </script>
+</body>
+</html>

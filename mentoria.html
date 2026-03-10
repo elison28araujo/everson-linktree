@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentoria | Everson Araujo</title>
+  <meta name="description" content="Mentoria com Everson Araujo" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #111111;
+      --card: #1a1a1a;
+      --card-2: #ffffff;
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.74);
+      --dark: #161616;
+      --shadow: 0 20px 60px rgba(0,0,0,0.28);
+      --radius: 26px;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(17, 17, 17, 0.84);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .topbar-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: .25s ease;
+      border: 1px solid rgba(255,255,255,0.10);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-outline {
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-primary {
+      color: #111;
+      background: #fff;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 58px 20px 26px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      text-transform: uppercase;
+      line-height: .95;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .video-section {
+      max-width: 1080px;
+      margin: 18px auto 28px;
+      padding: 0 20px;
+      display: grid;
+      gap: 22px;
+    }
+
+    .video-box {
+      background: #000;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .video-box video {
+      width: 100%;
+      display: block;
+      background: #000;
+    }
+
+    .gallery {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 6px 20px 70px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .card img,
+    .card video {
+      width: 100%;
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .info-block {
+      max-width: 1080px;
+      margin: 0 auto 70px;
+      padding: 0 20px;
+    }
+
+    .info-box {
+      background: #fff;
+      color: #111;
+      border-radius: 30px;
+      padding: 34px 28px;
+      box-shadow: 0 24px 60px rgba(0,0,0,.18);
+      text-align: center;
+    }
+
+    .info-box h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+
+    .info-box p {
+      max-width: 760px;
+      margin: 0 auto 24px;
+      line-height: 1.8;
+      color: rgba(17,17,17,0.78);
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-row .btn {
+      padding: 14px 24px;
+    }
+
+    .cta-row .btn-primary {
+      background: #111;
+      color: #fff;
+    }
+
+    .footer-space {
+      height: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .topbar-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .top-actions {
+        width: 100%;
+      }
+
+      .top-actions a {
+        flex: 1;
+        text-align: center;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .info-box {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Everson Araujo</div>
+      <div class="top-actions">
+        <a class="btn btn-outline" href="index.html">Voltar</a>
+        <a class="btn btn-primary" href="https://wa.me/559184218754" target="_blank">Agendar / Orçamento</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Mentoria</h1>
+    <p>
+      Uma experiência prática para fotógrafos que querem evoluir no olhar, dominar a luz,
+      elevar a direção das fotos e transformar conhecimento em resultado real.
+    </p>
+  </section>
+
+  <section class="video-section">
+    <div class="video-box">
+      <video id="mentoriaVideo1" muted playsinline loop controls autoplay preload="metadata">
+        <source src="terceira.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo em HTML5.
+      </video>
+    </div>
+
+    <div class="video-box">
+      <video id="mentoriaVideo2" muted playsinline loop controls autoplay preload="metadata">
+        <source src="decima segunda.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo em HTML5.
+      </video>
+    </div>
+
+    <div class="video-box">
+      <video id="mentoriaVideo3" muted playsinline loop controls autoplay preload="metadata">
+        <source src="decima terceira.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo em HTML5.
+      </video>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="card"><img src="primeira.jpg" alt="Mentoria 1"></div>
+    <div class="card"><img src="segunda.jpg" alt="Mentoria 2"></div>
+    <div class="card"><img src="quarta.jpg" alt="Mentoria 4"></div>
+    <div class="card"><img src="sexta.jpg" alt="Mentoria 6"></div>
+    <div class="card"><img src="setima.jpg" alt="Mentoria 7"></div>
+    <div class="card"><img src="oitava.jpg" alt="Mentoria 8"></div>
+    <div class="card"><img src="nona.jpg" alt="Mentoria 9"></div>
+    <div class="card"><img src="decima primeira.jpg" alt="Mentoria 11"></div>
+  </section>
+
+  <section class="info-block">
+    <div class="info-box">
+      <h2>Aprenda na prática</h2>
+      <p>
+        A mentoria é voltada para quem quer entender luz, direção, posicionamento,
+        construção de imagem, leitura de cenário e evolução profissional com aplicação real.
+        Clique abaixo para falar direto no WhatsApp e receber informações.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://wa.me/559184218754" target="_blank">Falar no WhatsApp</a>
+        <a class="btn btn-outline" href="index.html">Voltar para início</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-space"></div>
+
+  <script>
+    const videos = [
+      document.getElementById('mentoriaVideo1'),
+      document.getElementById('mentoriaVideo2'),
+      document.getElementById('mentoriaVideo3')
+    ];
+
+    function tryPlay(video) {
+      if (!video) return;
+      video.play().catch(() => {});
+    }
+
+    window.addEventListener('load', () => {
+      videos.forEach(v => tryPlay(v));
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.45 });
+
+    videos.forEach(video => {
+      if (video) observer.observe(video);
+    });
+  </script>
+</body>
+</html>
