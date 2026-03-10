@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Everson Araujo</title>
-  <meta name="description" content="Everson Araujo | Fotógrafo" />
+  <title>Everson Araujo | Links</title>
+  <meta name="description" content="Links oficiais de Everson Araujo" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,24 +17,26 @@
     }
 
     :root {
-      --text-dark: #241913;
-      --cream: rgba(247, 242, 232, 0.70);
-      --cream-strong: rgba(248, 244, 236, 0.80);
-      --line: rgba(42, 30, 22, 0.55);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+      --text-main: #211814;
+      --text-soft: rgba(33, 24, 20, 0.78);
+      --btn-bg: rgba(255, 255, 255, 0.58);
+      --btn-bg-hover: rgba(255, 255, 255, 0.78);
+      --btn-border: rgba(34, 24, 18, 0.45);
+      --shadow-soft: 0 15px 45px rgba(0, 0, 0, 0.18);
+      --shadow-strong: 0 20px 55px rgba(0, 0, 0, 0.24);
     }
 
     html, body {
       width: 100%;
       min-height: 100%;
-      font-family: 'Montserrat', sans-serif;
-      background: #d8cfbf;
-      overflow-x: hidden;
     }
 
     body {
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      background: #000;
+      overflow-x: hidden;
       position: relative;
-      color: var(--text-dark);
     }
 
     .bg-slider {
@@ -50,9 +52,9 @@
       background-size: cover;
       background-position: center;
       opacity: 0;
-      transform: scale(1.08);
-      transition: opacity 1.4s ease, transform 7s ease;
-      filter: blur(1px);
+      transform: scale(1.09);
+      transition: opacity 1.4s ease, transform 6.5s ease;
+      filter: blur(2px);
     }
 
     .bg-slide.active {
@@ -60,41 +62,50 @@
       transform: scale(1);
     }
 
-    .overlay {
+    .bg-overlay {
       position: fixed;
       inset: 0;
       z-index: -3;
       background:
-        linear-gradient(to bottom, rgba(241, 233, 219, 0.52), rgba(222, 208, 185, 0.56)),
-        radial-gradient(circle at center, rgba(255,255,255,0.18), rgba(0,0,0,0.04));
-      backdrop-filter: blur(2px);
+        linear-gradient(to bottom, rgba(236, 225, 204, 0.50), rgba(204, 186, 160, 0.42)),
+        linear-gradient(to top, rgba(0,0,0,0.18), rgba(0,0,0,0.10));
+    }
+
+    .bg-vignette {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,0.04) 0%, rgba(0,0,0,0.18) 100%);
     }
 
     .grain {
       position: fixed;
       inset: 0;
-      z-index: -2;
-      opacity: 0.13;
+      z-index: -1;
       pointer-events: none;
+      opacity: 0.12;
       background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Ccircle cx='12' cy='15' r='1'/%3E%3Ccircle cx='52' cy='83' r='1'/%3E%3Ccircle cx='90' cy='40' r='1'/%3E%3Ccircle cx='140' cy='112' r='1'/%3E%3Ccircle cx='162' cy='60' r='1'/%3E%3Ccircle cx='32' cy='130' r='1'/%3E%3Ccircle cx='118' cy='150' r='1'/%3E%3Ccircle cx='76' cy='165' r='1'/%3E%3C/g%3E%3C/svg%3E");
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='%23000000'%3E%3Ccircle cx='12' cy='18' r='1'/%3E%3Ccircle cx='45' cy='60' r='1'/%3E%3Ccircle cx='90' cy='24' r='1'/%3E%3Ccircle cx='122' cy='100' r='1'/%3E%3Ccircle cx='145' cy='42' r='1'/%3E%3Ccircle cx='28' cy='126' r='1'/%3E%3Ccircle cx='70' cy='145' r='1'/%3E%3Ccircle cx='114' cy='138' r='1'/%3E%3C/g%3E%3C/svg%3E");
       mix-blend-mode: multiply;
     }
 
     .page {
       min-height: 100vh;
-      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 30px 18px;
+      padding: 28px 18px;
     }
 
     .content {
       width: 100%;
       max-width: 760px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      animation: fadeUp 1.1s ease;
+      animation: fadeUp 1s ease;
     }
 
     .profile-wrap {
@@ -104,54 +115,52 @@
     }
 
     .profile-ring {
-      width: 150px;
-      height: 150px;
+      width: 136px;
+      height: 136px;
       border-radius: 50%;
-      padding: 6px;
-      border: 3px solid rgba(0, 0, 0, 0.85);
-      background: rgba(255,255,255,0.28);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.16);
+      padding: 5px;
+      border: 3px solid rgba(20, 14, 11, 0.95);
+      background: rgba(255,255,255,0.26);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.20);
     }
 
     .profile-img {
       width: 100%;
       height: 100%;
-      border-radius: 50%;
       object-fit: cover;
+      border-radius: 50%;
       display: block;
-      border: 2px solid rgba(255,255,255,0.7);
+      border: 2px solid rgba(255,255,255,0.74);
     }
 
     .name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 7vw, 5.6rem);
+      font-size: clamp(3rem, 7vw, 5.5rem);
       line-height: 0.95;
       font-weight: 600;
-      letter-spacing: 0.5px;
-      color: #241913;
+      color: var(--text-main);
       text-transform: uppercase;
+      letter-spacing: 0.5px;
       margin-bottom: 8px;
-      text-shadow: 0 2px 10px rgba(255,255,255,0.10);
+      text-shadow: 0 2px 10px rgba(255,255,255,0.08);
     }
 
     .subtitle {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(1rem, 2vw, 1.4rem);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-main);
       font-weight: 700;
-      letter-spacing: 10px;
       text-transform: uppercase;
-      color: rgba(36, 25, 19, 0.95);
-      margin-bottom: 42px;
-      padding-left: 10px;
+      letter-spacing: 8px;
+      margin-bottom: 34px;
+      padding-left: 8px;
     }
 
     .links {
       width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
+      max-width: 620px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
     }
 
     .link-btn {
@@ -159,27 +168,28 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-      min-height: 78px;
-      padding: 18px 26px;
+      min-height: 76px;
+      padding: 16px 22px;
+      text-align: center;
       text-decoration: none;
-      border-radius: 999px;
-      border: 3px solid var(--line);
-      background: var(--cream);
-      color: #1d140f;
-      font-size: 1.15rem;
+      font-size: 1.08rem;
       font-weight: 600;
-      letter-spacing: 6px;
+      letter-spacing: 5px;
       text-transform: uppercase;
+      color: var(--text-main);
+      border-radius: 999px;
+      border: 2px solid var(--btn-border);
+      background: var(--btn-bg);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-soft);
       transition: transform 0.28s ease, background 0.28s ease, box-shadow 0.28s ease;
     }
 
     .link-btn:hover {
-      transform: translateY(-3px) scale(1.01);
-      background: var(--cream-strong);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+      transform: translateY(-2px) scale(1.01);
+      background: var(--btn-bg-hover);
+      box-shadow: var(--shadow-strong);
     }
 
     .link-btn:active {
@@ -187,18 +197,19 @@
     }
 
     .footer-user {
-      margin-top: 48px;
-      font-size: 1.05rem;
+      margin-top: 36px;
+      font-size: 1rem;
       font-weight: 700;
-      letter-spacing: 2px;
       text-transform: uppercase;
-      color: rgba(36, 25, 19, 0.95);
+      letter-spacing: 2px;
+      color: rgba(33, 24, 20, 0.95);
+      text-shadow: 0 2px 12px rgba(255,255,255,0.08);
     }
 
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(22px);
+        transform: translateY(18px);
       }
       to {
         opacity: 1;
@@ -208,57 +219,54 @@
 
     @media (max-width: 768px) {
       .page {
-        padding: 26px 16px;
+        padding: 24px 16px;
       }
 
       .profile-ring {
-        width: 124px;
-        height: 124px;
+        width: 118px;
+        height: 118px;
       }
 
       .subtitle {
-        letter-spacing: 7px;
-        margin-bottom: 34px;
-      }
-
-      .links {
-        max-width: 100%;
+        letter-spacing: 6px;
+        margin-bottom: 28px;
       }
 
       .link-btn {
-        min-height: 72px;
-        font-size: 1rem;
+        min-height: 70px;
+        font-size: 0.98rem;
         letter-spacing: 4px;
-        padding: 16px 20px;
       }
 
       .footer-user {
-        margin-top: 36px;
-        font-size: 0.95rem;
+        margin-top: 30px;
+        font-size: 0.92rem;
       }
     }
 
     @media (max-width: 480px) {
       .name {
-        font-size: 3.7rem;
+        font-size: 3.5rem;
       }
 
       .subtitle {
-        font-size: 0.95rem;
+        font-size: 0.92rem;
         letter-spacing: 5px;
       }
 
       .link-btn {
-        min-height: 68px;
-        font-size: 0.94rem;
+        min-height: 66px;
+        font-size: 0.92rem;
         letter-spacing: 3px;
+        padding: 15px 18px;
       }
     }
   </style>
 </head>
 <body>
   <div class="bg-slider" id="bgSlider"></div>
-  <div class="overlay"></div>
+  <div class="bg-overlay"></div>
+  <div class="bg-vignette"></div>
   <div class="grain"></div>
 
   <main class="page">
@@ -273,14 +281,14 @@
       <p class="subtitle">Fotógrafo</p>
 
       <div class="links">
-        <a class="link-btn" href="https://wa.me/559184218754" target="_blank">Corporativo</a>
-        <a class="link-btn" href="https://wa.me/559184218754" target="_blank">Campanhas</a>
-        <a class="link-btn" href="https://wa.me/559184218754" target="_blank">Fashion</a>
-        <a class="link-btn" href="https://wa.me/559184218754" target="_blank">Agendamento</a>
-        <a class="link-btn" href="https://wa.me/559184218754" target="_blank">Mentoria</a>
+        <a class="link-btn" href="#" target="_blank">Corporativo</a>
+        <a class="link-btn" href="#" target="_blank">Campanhas</a>
+        <a class="link-btn" href="#" target="_blank">Fashion</a>
+        <a class="link-btn" href="#" target="_blank">Agendamento</a>
+        <a class="link-btn" href="#" target="_blank">Mentoria</a>
       </div>
 
-      <div class="footer-user">@EVERSONARAUJO__</div>
+      <div class="footer-user">@eversonaraujo__</div>
     </section>
   </main>
 
